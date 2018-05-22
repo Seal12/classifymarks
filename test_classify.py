@@ -13,8 +13,12 @@ class TestExclude(unittest.TestCase):
         fname, boundaries = self.getData()
         data = classify.getData(fname)
         fname.close()
-        self.assertEqual(len(data),10)
+        self.assertEqual(len(data), 10)
 
+    def test_ranges(self):
+        data = [['AC008128', 73],['AC019221', 38],['AB040731', 52]]
+        ranges = classify.thoseInRange(data, 0, 49)
+        self.assertEqual(ranges[0],'AC019221')
 
 if __name__ == '__main__':
     unittest.main()
