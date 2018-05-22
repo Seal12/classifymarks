@@ -13,7 +13,13 @@ class TestExclude(unittest.TestCase):
         fname, boundaries = self.getData()
         data = classify.getData(fname)
         fname.close()
-        self.assertEqual(len(data), 10)
+
+        fname = open("marks.dat")
+        counter = 0
+        for line in fname:
+            counter += 1
+        fname.close()
+        self.assertEqual(len(data), counter)
 
     def test_ranges_1(self):
         data = [['AC008128', 73],['AC019221', 38],['AB040731', 52]]
