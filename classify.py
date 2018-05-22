@@ -31,9 +31,10 @@ def showRanges(data):
         lower=upper
 
 
-print(sys.argv)
-fname = open(sys.argv[1])
-boundaries = list(map(int, sys.argv[2:]))
+if __name__ == "__main__":
+    print(sys.argv)
+    fname = open(sys.argv[1])
+    boundaries = list(map(int, sys.argv[2:]))
 
-data = getData(fname)
-showRanges(data)
+    data = getData(fname)
+    showRanges(data)
